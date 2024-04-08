@@ -322,7 +322,7 @@
                                        </div>
                                    </div>
                                    <h5> Workshop Program </h5>
-                                   <p>The proposed workshop (including the challenge) will be held as a full-day event, August --, 2024.</p>
+                                   <p>The proposed workshop (including the challenge) will be held as a full-day event, August 4th, 2024.</p>
                                 <ul>
 
                                   </ul>
@@ -393,23 +393,20 @@
                                            <h5>The rules and guidelines for the competition/challenge</h5>
 
                                            <b>1. Datasets</b><br>
-                                           <p> Datasets for the proposed challenge are available. The MiGA challenge is planned as a continuous annual event. Two benchmark datasets published on FG 2019 and CVPR 2021 are available and will be used for the challenge. The first one is the SMG dataset published in FG2019. Spontaneous Micro-Gesture (SMG) dataset consists of 3,692 samples of 17 MGs. The MG clips are annotated from 40 long video sequences (10-15 minutes) with 821,056 frames in total. The datasets were collected from 40 subjects while narrating a fake and real story to elicit the emotional states. The participants are recorded collected by Kinect resulting in four modalities, RGB, 3D skeletal joints, depth and silhouette.  In this workshop, we allow participants to use the skeleton, RGB or both modalities. <a style="color: blue;" href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis"> Download SMG dataset</a> </p>
+                                           <p> Datasets for the proposed challenge are available. The MiGA challenge is planned as a continuous annual event. Two benchmark datasets published on IJCV 2023 and CVPR 2021 are available and will be used for the challenge. The first one is the SMG dataset published in IJCV2023 Spontaneous Micro-Gesture (SMG) dataset consists of 3,692 samples of 17 MGs. The MG clips are annotated from 40 long video sequences (10-15 minutes) with 821,056 frames in total. The datasets were collected from 40 subjects while narrating a fake and real story to elicit the emotional states. The participants are recorded collected by Kinect resulting in four modalities, RGB, 3D skeletal joints, depth and silhouette.  In this workshop, we allow participants to use the skeleton, RGB or both modalities. <a style="color: blue;" href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis"> Details about SMG dataset</a> </p>
                                                <br>
-                                                 <p> The second dataset is iMiGUE published in CVPR2021. Micro-Gesture Understanding and Emotion analysis (iMiGUE) dataset consists of 32 MGs plus one non-MG class collected from post-match press conferences videos of famous tennis players. The dataset consists of 18,499 samples of MGs to detect negative and positive emotions. The MG clips are annotated from 359 long video sequences (0.5-26 minutes) with 3,765,600 frames in total. The dataset contains RGB modality and 2D skeletal joints collected from Open-Pose. In this workshop, we allow participants to use the
-                                                  skeleton, RGB or both modalities.
-                                                 <a style="color: blue;" href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis"> Download iMiGUE dataset</a></p>
+                                                 <p> The second dataset is iMiGUE published in CVPR2021. Micro-Gesture Understanding and Emotion analysis (iMiGUE) dataset consists of 32 MGs plus one non-MG class collected from post-match press conferences videos of famous tennis players. The dataset consists of 18,499 samples of MGs to detect negative and positive emotions. The MG clips are annotated from 359 long video sequences (0.5-26 minutes) with 3,765,600 frames in total. The dataset contains RGB modality and 2D skeletal joints collected from Open-Pose. In this workshop, we allow participants to use the skeleton, RGB or both modalities.
+                                                 <a style="color: blue;" href="https://www.oulu.fi/en/university/faculties-and-units/faculty-information-technology-and-electrical-engineering/center-machine-vision-and-signal-analysis"> Details about iMiGUE dataset</a></p>
                                                  <br>
-                                               <p>Note that: 1) not all data are used for the challenge. 2) part of the data will be selected and tailored for different challenge tasks, 3) planned as a continuous event, MiGA will contain multiple parallel challenge tracks and the tasks vary in each year.</p> <br>
+                                               <p>Note that: 1) not all data are used for the challenge. 2) part of the data will be selected and tailored for different challenge tasks, please follow the Kaggle competition links to obtain and process the datasets.</p> <br>
                                            <b>2. Evaluation</b><br>
-                                           <p> Training datasets include iMiGUE and SMG datasets while the testing dataset (without annotation released) is from iMiGUE. We deploy a cross-subject evaluation protocol by dividing the 72 subjects into a training group of 37 subjects and a testing group of 35 subjects. For MG classification track, 13,936 and 3,692 MG clips from iMiGUE and SMG datasets will be used for training and validating, and the remaining 4,563 MG clips from iMiGUE will be used for testing. For MG online recognition track, 252 and 40 long sequences from iMiGUE and SMG datasets will be used for training and validating, and the remaining 104 long sequences from iMiGUE will be used for testing. </p>
+                                           <p> We deploy a cross-subject evaluation protocol. For MG classification track, 13,936 and 3,692 MG clips from iMiGUE and SMG datasets will be used for training and validating, and the remaining 4,563 MG clips from iMiGUE will be used for testing. For MG online recognition track, 252 and 40 long sequences from iMiGUE and SMG datasets will be used for training and validating, and the remaining 104 long sequences from iMiGUE will be used for testing. </p>
                                             <br>
-                                            <p><b>MG classification track:</b> We report Top-5 accuracy on the following subsets of the test set: 1) Overall: All segments in the test split; 2) Tail Classes: Due to the long-tailed nature of the datasets, among a total 33 classes in iMiGUE dataset, 28 classes are tail classes (approx. 57.8of the data). Since there is considerable overlap between consecutive fine-grained MG segments, we use Top-5 accuracy instead of the standard Top-1. Submissions will be ranked on the basis of Top-5 accuracy on the overall split.</p>
+                                            <p><b>MG classification track:</b> We report Top-1 accuracy on the testing setes on the iMiGUE dataset. Submissions will be ranked based on Top-1 accuracy on the overall split (if Top-1 results are the same, then Top-5 will be used to compare the results).</p>
                                             <br>
-                                            <p><b>MG online recognition track:</b> We jointly evaluate the detection and classification performances of algorithms by using the F1 score measurement defined below: F1 =2*Precision*Recall/(Precision+Recall), given a long video sequence that needs to be evaluated, P recision is the fraction of correctly classified MGs among all gestures retrieved in the sequence by algorithms, while Recall (or sensitivity) is the fraction of MGs that have been correctly retrieved over the total
-                                            amount of annotated MGs.</p>
+                                            <p><b>MG online recognition track:</b> We jointly evaluate the detection and classification performances of algorithms by using the F1 score measurement defined below: F1 =2*Precision*Recall/(Precision+Recall), given a long video sequence that needs to be evaluated, P recision is the fraction of correctly classified MGs among all gestures retrieved in the sequence by algorithms, while Recall (or sensitivity) is the fraction of MGs that have been correctly retrieved over the total amount of annotated MGs.</p>
                                            <br>
-                                           <p>Submission format for both tracks. Participants must submit their predictions in the a single .csv file on the Kaggle platform, more detailed instuctions for each track can be found on Kaggle. The results will be evaluated on the server and displayed on the ranking list in real-time. The organization team has the right to examine the participants source code to ensure the reproducibility of the algorithms. The final results and ranking will be confirmed
-                                            and announced by organizers. </p>
+                                           <p>Submission format for both tracks. Participants must submit their predictions in the a single .csv file on the Kaggle platform, more detailed instuctions for each track can be found on Kaggle. The results will be evaluated on the server and displayed on the ranking list in real-time. The organization team has the right to examine the participants source code to ensure the reproducibility of the algorithms. The final results and ranking will be confirmed and announced by organizers. </p>
                                            <br>
 
                                            <div class="profess-cover row no-margin">
@@ -457,7 +454,7 @@
                         <li>May 30, 2024. Paper submission deadline (workshop).</li>
                         <li> June 04, 2024. Notification to authors.</li>
                         <li> June 10, 2024. Camera-ready deadline. </li>
-                        <li> August, 2024. MiGA IJCAI 2024 Workshop, Jeju, Korea. </li>
+                        <li> August 3rd-9th, 2024. MiGA IJCAI 2024 Workshop, Jeju, Korea. </li>
                     </ul>
 </div>
               </div>
@@ -542,28 +539,29 @@
 
                 <div class="sec-title">
                   <h2 class="decorated"><span>Invited speakers</span></h2>
-                  TBD
                 </div>
 
-                <div class="cards">
+                 <div class="cards">
                   <div class="row justify-content-center">
 
                   <!-- Person -->
 
-                  <!-- <a class="card col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" href="https://profiles.stanford.edu/f-lin/">
+                 <a class="card col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" href="https://profiles.stanford.edu/f-lin/">
                     <div class="card-body">
                       <div class="card-front">
                         <div class="text-center">
                             <img class="img-fluid"  src="assets/organizers/vankee.jpg" />
-                            <h4>Feng Vankee Lin</h4>
+                            <h4>Woo tak</h4>
                             <p>Stanford University, USA <br>   </p>
                         </div>
                       </div>
                     </div>
-                  </a> -->
+                  </a>
 
                 </div>
                 </div>
+
+
 
                 <div class="sec-title">
                   <h2 class="decorated"><span>Data Chairs</span></h2>
